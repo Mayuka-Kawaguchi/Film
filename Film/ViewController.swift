@@ -1,11 +1,12 @@
 import UIKit
 import AVFoundation
 
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet var cameraButton: UIButton!
+    @IBOutlet var photoImageView: UIImageView!
     
-    
+    var filterImage: UIImage!
     var captureSession = AVCaptureSession()
     var mainCamera: AVCaptureDevice?
     var innerCamera: AVCaptureDevice?
@@ -30,8 +31,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             picker.allowsEditing = true
             
             present(picker, animated: true, completion: nil)
-//            self.performSegue(withIdentifier: "toFilter", sender: nil)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier=="toPhoto"{
+            let filterViewContoroller = segue.destination as! FilterViewController
+            let cameraImageView = filterViewContoroller.cameraImageView
+            filterViewContoroller.pic = filterImage        }
     }
     
     func setupCaptureSession() {
@@ -39,13 +46,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        let storyboard: UIStoryboard = self.storyboard!
-        let next = storyboard.instantiateViewController(withIdentifier: "FilterViewController")
-        self.present(next, animated: true, completion: nil)
-        print("gggg")
-        
-//        originalImage = cameraImageView.image
-//        dismiss(animated: true, completion: nil)
+        filterImage = info[.editedImage] as? UIImage
+        dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "toPhoto", sender: nil)
     }
 }
