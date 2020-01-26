@@ -6,7 +6,6 @@ target 'Film' do
   use_frameworks!
 
   # Pods for Film
-pod 'FlexibleAVCapture'
   target 'FilmTests' do
     inherit! :search_paths
     # Pods for testing

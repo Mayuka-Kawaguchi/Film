@@ -29,16 +29,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             picker.sourceType = .photoLibrary
             picker.delegate = self
             picker.allowsEditing = true
-            
             present(picker, animated: true, completion: nil)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier=="toPhoto"{
-            let filterViewContoroller = segue.destination as! FilterViewController
+        if segue.identifier=="toPhoto" {
+            let filterViewContoroller = segue.destination as! EditingViewController
             let cameraImageView = filterViewContoroller.cameraImageView
-            filterViewContoroller.pic = filterImage        }
+            filterViewContoroller.pic = filterImage
+        }
     }
     
     func setupCaptureSession() {

@@ -24,11 +24,6 @@ class CameraViewController: UIViewController {
         styleBackButton()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func cameraButtonTouched() {
         let settings = AVCapturePhotoSettings()
         // フラッシュの設定
@@ -56,17 +51,17 @@ class CameraViewController: UIViewController {
 }
 
 //AVCapturePhotoCaptureDelegate
-extension CameraViewController: AVCapturePhotoCaptureDelegate{
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             let uiImage = UIImage(data: imageData)!
             let cgimage = (uiImage.cgImage)!
-            let w = Double(cgimage.width)
-            let h = Double(cgimage.height)
-            let rect = CGRect(x: w*0.08, y: h*0.04, width: w*1.0, height: w*0.7)
+            let width = Double(cgimage.width)
+            let height = Double(cgimage.height)
+            let rect = CGRect(x: width*0.08, y: height*0.04, width: width*1.0, height: width*0.7)
             let image = UIImage(cgImage: cgimage.cropping(to: rect)!, scale: uiImage.scale, orientation: uiImage.imageOrientation)
-            UIImageWriteToSavedPhotosAlbum(image, nil,nil,nil)
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
         print("AVCapturePhotoCaptureDelegate")
     }
@@ -74,7 +69,7 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate{
 }
 
 //カメラ設定
-extension CameraViewController{
+extension CameraViewController {
     // カメラの画質の設定
     
     func setupCaptureSession() {
@@ -90,10 +85,10 @@ extension CameraViewController{
         // プレビューレイヤの表示の向きを設定
         self.cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
         
-        let w = UIScreen.main.bounds.width
-        let h = UIScreen.main.bounds.height
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
 
-        self.cameraPreviewLayer?.frame = CGRect(x: w*0.25, y: h*0.08, width: w*0.55, height: w*0.7)
+        self.cameraPreviewLayer?.frame = CGRect(x: width*0.25, y: height*0.08, width: width*0.55, height: width*0.7)
 //        self.cameraPreviewLayer?.frame = view.frame
         self.view.layer.insertSublayer(self.cameraPreviewLayer!, at: 0)
     }
@@ -131,7 +126,6 @@ extension CameraViewController{
             print(error)
         }
     }
-    
 
     // ボタンのスタイル
     func styleCaptureButton() {
@@ -147,5 +141,4 @@ extension CameraViewController{
         cameraButton.clipsToBounds = true
         cameraButton.layer.cornerRadius = min(cameraButton.frame.width, cameraButton.frame.height) / 3
     }
-    
 }

@@ -24,40 +24,21 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEC-jz-h5Q">
-                                <rect key="frame" x="46" y="117" width="142" height="164"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUf-dq-elO" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
+                                <rect key="frame" x="203" y="117" width="142" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.29225581880000001" green="0.62607306240000005" blue="0.68236500020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="gqH-pc-JNm" kind="presentation" id="uNv-Nd-dOi"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="hTX-yt-U8d">
-                                <rect key="frame" x="63" y="165" width="109" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUf-dq-elO">
-                                <rect key="frame" x="196" y="117" width="142" height="164"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.29225581880000001" green="0.62607306240000005" blue="0.68236500020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal">
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="filter.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="openAlbum" destination="BYZ-38-t0r" eventType="touchUpInside" id="eLR-m7-60Z"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="filter.png" translatesAutoresizingMaskIntoConstraints="NO" id="c5A-Y9-KII">
-                                <rect key="frame" x="213" y="165" width="109" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux3-eh-9ce">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux3-eh-9ce" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
                                 <rect key="frame" x="46" y="310" width="142" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.29225581880000001" green="0.62607306240000005" blue="0.68236500020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.75686274509803919" green="0.82352941176470584" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -69,12 +50,22 @@
                                 <rect key="frame" x="67" y="500" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEC-jz-h5Q" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
+                                <rect key="frame" x="42" y="117" width="142" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="camera.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gqH-pc-JNm" kind="presentation" identifier="startCamera" id="uNv-Nd-dOi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="cameraButton" destination="JEC-jz-h5Q" id="ZrD-zD-gZC"/>
                         <outlet property="photoImageView" destination="9fc-wi-BRS" id="7fZ-y5-PJM"/>
                         <segue destination="DvH-Ko-YgR" kind="presentation" identifier="toPhoto" id="7o9-vV-Lcp"/>
                     </connections>
@@ -102,9 +93,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZQ-y0-JZ1">
                                 <rect key="frame" x="159" y="557" width="57" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.29225581880000001" green="0.62607306240000005" blue="0.68236500020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal">
-                                    <color key="titleColor" red="0.29225581884384155" green="0.62607306241989136" blue="0.68236500024795532" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="cameraButtonTouched" destination="gqH-pc-JNm" eventType="touchUpInside" id="ahB-Mx-ycc"/>
@@ -123,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="1074.4000000000001" y="130.88455772113943"/>
         </scene>
-        <!--Filter View Controller-->
+        <!--Editing View Controller-->
         <scene sceneID="yG2-Di-1jc">
             <objects>
-                <viewController restorationIdentifier="FilterViewController" storyboardIdentifier="FilterViewController" modalPresentationStyle="fullScreen" id="DvH-Ko-YgR" customClass="FilterViewController" customModule="Film" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FilterViewController" storyboardIdentifier="FilterViewController" modalPresentationStyle="fullScreen" id="DvH-Ko-YgR" customClass="EditingViewController" customModule="Film" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9p6-K7-q8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,15 +126,58 @@
                                 <rect key="frame" x="16" y="99" width="343" height="331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3nm-1g-uLj">
-                                <rect key="frame" x="16" y="32" width="47" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWU-UP-xbi" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
+                                <rect key="frame" x="16" y="38" width="46" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back2.png"/>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="16"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="backButtonTouched" destination="DvH-Ko-YgR" eventType="touchUpInside" id="8yZ-0x-tfy"/>
-                                    <action selector="backButtonTouched" destination="gqH-pc-JNm" eventType="touchUpInside" id="vn1-sQ-bPz"/>
+                                    <action selector="backButtonTouched" destination="DvH-Ko-YgR" eventType="touchUpInside" id="Nqh-FT-SXi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nz-3z-vtF" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
+                                <rect key="frame" x="248" y="10" width="82" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="16"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savePhoto" destination="DvH-Ko-YgR" eventType="touchUpInside" id="H2y-ub-GPx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3E-nW-iNp" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
+                                <rect key="frame" x="146" y="10" width="82" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="16"/>
+                                <state key="normal" title="SNS"/>
+                                <connections>
+                                    <action selector="snsPhoto" destination="DvH-Ko-YgR" eventType="touchUpInside" id="Bo7-Nj-r73"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lMX-PI-VQu">
+                                <rect key="frame" x="230" y="389" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderValue:" destination="DvH-Ko-YgR" eventType="touchUpInside" id="xDc-hk-xoD"/>
+                                </connections>
+                            </slider>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ba-hR-zcH">
+                                <rect key="frame" x="0.0" y="444" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96848052740000001" green="0.83128049110000002" blue="0.40515463680000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="wq2-Zm-QbN"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="jxm-7Y-Q6n"/>
+                            </scrollView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rKe-pA-6eC">
+                                <rect key="frame" x="0.0" y="484" width="375" height="183"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4Fj-Wy-7o9"/>
@@ -151,6 +185,8 @@
                     <navigationItem key="navigationItem" id="C2l-ep-ALL"/>
                     <connections>
                         <outlet property="cameraImageView" destination="Mqh-0a-IzZ" id="hsy-vG-1PY"/>
+                        <outlet property="menuScrollView" destination="4ba-hR-zcH" id="fKX-jW-lB6"/>
+                        <outlet property="menuView" destination="rKe-pA-6eC" id="ABp-ld-z7z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptJ-M9-3te" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

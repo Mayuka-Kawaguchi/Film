@@ -3,19 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		22FB66DE17C0DB61EFAED44D /* Pods_FilmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A88830666B5E6D924EF8F53 /* Pods_FilmTests.framework */; };
 		3C69B839C523672A0E5D0840 /* Pods_Film.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBAF96EBEC6BDE9FD888D4AE /* Pods_Film.framework */; };
 		8E3970C66878B87EF02637FA /* Pods_FilmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85B9859A72D231E348DC70B /* Pods_FilmUITests.framework */; };
-		C627375623A1E6C600F96D64 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = C627375523A1E6C600F96D64 /* back.png */; };
-		C627375823A1E7BB00F96D64 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = C627375723A1E7BB00F96D64 /* back2.png */; };
-		C627375E23A1EB9C00F96D64 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C627375D23A1EB9C00F96D64 /* camera.png */; };
-		C627376023A1ECCD00F96D64 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = C627375F23A1ECCD00F96D64 /* filter.png */; };
+		C60D411B23DC2C340010925A /* TapAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D411A23DC2C340010925A /* TapAnimationButton.swift */; };
+		C60D411F23DD60B20010925A /* ChooseFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D411E23DD60B20010925A /* ChooseFilterView.swift */; };
+		C60D412123DD60C50010925A /* ChooseFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60D412023DD60C50010925A /* ChooseFilterView.xib */; };
 		C62E691723935C460041624A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E691623935C460041624A /* CameraViewController.swift */; };
-		C62E6919239363170041624A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E6918239363170041624A /* FilterViewController.swift */; };
+		C62E6919239363170041624A /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E6918239363170041624A /* EditingViewController.swift */; };
 		C65DED75238128E800DE99A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED74238128E800DE99A2 /* AppDelegate.swift */; };
 		C65DED77238128E800DE99A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED76238128E800DE99A2 /* SceneDelegate.swift */; };
 		C65DED79238128E800DE99A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED78238128E800DE99A2 /* ViewController.swift */; };
@@ -25,8 +24,6 @@
 		C65DED84238128EA00DE99A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65DED82238128EA00DE99A2 /* LaunchScreen.storyboard */; };
 		C65DED8F238128EA00DE99A2 /* FilmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED8E238128EA00DE99A2 /* FilmTests.swift */; };
 		C65DED9A238128EA00DE99A2 /* FilmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED99238128EA00DE99A2 /* FilmUITests.swift */; };
-		C6C2908D23C89C12002AE834 /* SubFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C2908C23C89C12002AE834 /* SubFilterViewController.swift */; };
-		C6CFB02723CAC4C500AFD6EE /* FlexibleAVCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CFB02623CAC4C500AFD6EE /* FlexibleAVCaptureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,12 +51,11 @@
 		571CC1AF4919FF15B512EDFB /* Pods-FilmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmUITests.debug.xcconfig"; path = "Target Support Files/Pods-FilmUITests/Pods-FilmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B312C8649E94275A82451ED /* Pods-FilmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmTests.debug.xcconfig"; path = "Target Support Files/Pods-FilmTests/Pods-FilmTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F39B1A77C36E3470DF94003 /* Pods-FilmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmUITests.release.xcconfig"; path = "Target Support Files/Pods-FilmUITests/Pods-FilmUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C627375523A1E6C600F96D64 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		C627375723A1E7BB00F96D64 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
-		C627375D23A1EB9C00F96D64 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
-		C627375F23A1ECCD00F96D64 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		C60D411A23DC2C340010925A /* TapAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAnimationButton.swift; sourceTree = "<group>"; };
+		C60D411E23DD60B20010925A /* ChooseFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFilterView.swift; sourceTree = "<group>"; };
+		C60D412023DD60C50010925A /* ChooseFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseFilterView.xib; sourceTree = "<group>"; };
 		C62E691623935C460041624A /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		C62E6918239363170041624A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		C62E6918239363170041624A /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
 		C65DED71238128E800DE99A2 /* Film.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Film.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65DED74238128E800DE99A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65DED76238128E800DE99A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,8 +71,6 @@
 		C65DED95238128EA00DE99A2 /* FilmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65DED99238128EA00DE99A2 /* FilmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmUITests.swift; sourceTree = "<group>"; };
 		C65DED9B238128EA00DE99A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6C2908C23C89C12002AE834 /* SubFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubFilterViewController.swift; sourceTree = "<group>"; };
-		C6CFB02623CAC4C500AFD6EE /* FlexibleAVCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleAVCaptureViewController.swift; sourceTree = "<group>"; };
 		C85B9859A72D231E348DC70B /* Pods_FilmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBAF96EBEC6BDE9FD888D4AE /* Pods_Film.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Film.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,18 +151,15 @@
 		C65DED73238128E800DE99A2 /* Film */ = {
 			isa = PBXGroup;
 			children = (
-				C627375523A1E6C600F96D64 /* back.png */,
-				C627375723A1E7BB00F96D64 /* back2.png */,
-				C627375D23A1EB9C00F96D64 /* camera.png */,
-				C627375F23A1ECCD00F96D64 /* filter.png */,
 				C65DED74238128E800DE99A2 /* AppDelegate.swift */,
 				C65DED76238128E800DE99A2 /* SceneDelegate.swift */,
 				C65DED78238128E800DE99A2 /* ViewController.swift */,
 				C62E691623935C460041624A /* CameraViewController.swift */,
-				C62E6918239363170041624A /* FilterViewController.swift */,
-				C6C2908C23C89C12002AE834 /* SubFilterViewController.swift */,
+				C62E6918239363170041624A /* EditingViewController.swift */,
 				C65DED7A238128E800DE99A2 /* Main.storyboard */,
-				C6CFB02623CAC4C500AFD6EE /* FlexibleAVCaptureViewController.swift */,
+				C60D411E23DD60B20010925A /* ChooseFilterView.swift */,
+				C60D412023DD60C50010925A /* ChooseFilterView.xib */,
+				C60D411A23DC2C340010925A /* TapAnimationButton.swift */,
 				C65DED80238128EA00DE99A2 /* Assets.xcassets */,
 				C65DED82238128EA00DE99A2 /* LaunchScreen.storyboard */,
 				C65DED85238128EA00DE99A2 /* Info.plist */,
@@ -206,7 +197,6 @@
 				C65DED6D238128E800DE99A2 /* Sources */,
 				C65DED6E238128E800DE99A2 /* Frameworks */,
 				C65DED6F238128E800DE99A2 /* Resources */,
-				7FACECC9BEBB8512A2654D69 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,12 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C65DED84238128EA00DE99A2 /* LaunchScreen.storyboard in Resources */,
-				C627375823A1E7BB00F96D64 /* back2.png in Resources */,
 				C65DED81238128EA00DE99A2 /* Assets.xcassets in Resources */,
-				C627376023A1ECCD00F96D64 /* filter.png in Resources */,
-				C627375E23A1EB9C00F96D64 /* camera.png in Resources */,
-				C627375623A1E6C600F96D64 /* back.png in Resources */,
 				C65DED7C238128E800DE99A2 /* Main.storyboard in Resources */,
+				C60D412123DD60C50010925A /* ChooseFilterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,23 +383,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7FACECC9BEBB8512A2654D69 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Film/Pods-Film-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Film/Pods-Film-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Film/Pods-Film-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -421,11 +391,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C62E691723935C460041624A /* CameraViewController.swift in Sources */,
-				C62E6919239363170041624A /* FilterViewController.swift in Sources */,
+				C62E6919239363170041624A /* EditingViewController.swift in Sources */,
 				C65DED79238128E800DE99A2 /* ViewController.swift in Sources */,
-				C6C2908D23C89C12002AE834 /* SubFilterViewController.swift in Sources */,
 				C65DED7F238128E800DE99A2 /* Film.xcdatamodeld in Sources */,
-				C6CFB02723CAC4C500AFD6EE /* FlexibleAVCaptureViewController.swift in Sources */,
+				C60D411B23DC2C340010925A /* TapAnimationButton.swift in Sources */,
+				C60D411F23DD60B20010925A /* ChooseFilterView.swift in Sources */,
 				C65DED75238128E800DE99A2 /* AppDelegate.swift in Sources */,
 				C65DED77238128E800DE99A2 /* SceneDelegate.swift in Sources */,
 			);
