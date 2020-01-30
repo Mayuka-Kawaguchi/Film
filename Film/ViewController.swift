@@ -2,6 +2,7 @@ import UIKit
 import AVFoundation
 
 
+@available(iOS 13.0, *)
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var photoImageView: UIImageView!
@@ -36,8 +37,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier=="toPhoto" {
             let filterViewContoroller = segue.destination as! EditingViewController
-            let cameraImageView = filterViewContoroller.cameraImageView
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
             filterViewContoroller.pic = filterImage
+            appDelegate.imageName = filterImage
+            print(appDelegate.imageName)
         }
     }
     

@@ -21,14 +21,14 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     func horizontalScroll() {
             //crollContentViewのframe
-            scrollContentView.frame = CGRect(x: 20, y: 0, width: 780, height: 15)
+            scrollContentView.frame = CGRect(x: 20, y: 0, width: 780, height: 30)
             
             //上部のスクロールビューに多数のボタンを配置
             for i in 0...1 {
                 let button = UIButton()
                 //サイズ
                 
-                button.frame = CGRect(x: (i*110), y: 8, width: 90, height: 20)
+                button.frame = CGRect(x: (i*120), y: 8, width: 90, height: 20)
                 button.backgroundColor = UIColor.red
                 //タグ
                 button.tag = i
@@ -47,6 +47,7 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
             menuScrollView.addSubview(scrollContentView)
             menuScrollView.contentSize = scrollContentView.bounds.size
     }
+    
     
     func setTitleForButton(tag:Int, button:UIButton){
         switch tag {
@@ -73,10 +74,12 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         switch sender.tag {
         case 0:
             print("0")
-            var filterView = ChooseFilterView(coder: NSCoder())
+            var filterView = UINib(nibName: "ChooseFilterView", bundle: Bundle.main).instantiate(withOwner: self, options: nil).first as? UIView
             menuView.addSubview(filterView!)
         case 1:
             print("1")
+            var filterView = UINib(nibName: "EditView", bundle: Bundle.main).instantiate(withOwner: self, options: nil).first as? UIView
+            menuView.addSubview(filterView!)
         case 2:
             print("2")
         case 3:

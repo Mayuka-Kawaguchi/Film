@@ -168,7 +168,7 @@
                                 </connections>
                             </slider>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ba-hR-zcH">
-                                <rect key="frame" x="0.0" y="444" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="436" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96848052740000001" green="0.83128049110000002" blue="0.40515463680000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="wq2-Zm-QbN"/>

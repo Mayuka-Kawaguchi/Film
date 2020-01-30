@@ -24,6 +24,8 @@
 		C65DED84238128EA00DE99A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65DED82238128EA00DE99A2 /* LaunchScreen.storyboard */; };
 		C65DED8F238128EA00DE99A2 /* FilmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED8E238128EA00DE99A2 /* FilmTests.swift */; };
 		C65DED9A238128EA00DE99A2 /* FilmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED99238128EA00DE99A2 /* FilmUITests.swift */; };
+		C68403E823DED54700FE412E /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68403E723DED54700FE412E /* EditView.swift */; };
+		C68403EB23DED56700FE412E /* EditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68403EA23DED56700FE412E /* EditView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		C65DED95238128EA00DE99A2 /* FilmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65DED99238128EA00DE99A2 /* FilmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmUITests.swift; sourceTree = "<group>"; };
 		C65DED9B238128EA00DE99A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C68403E723DED54700FE412E /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		C68403EA23DED56700FE412E /* EditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditView.xib; sourceTree = "<group>"; };
 		C85B9859A72D231E348DC70B /* Pods_FilmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBAF96EBEC6BDE9FD888D4AE /* Pods_Film.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Film.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -159,6 +163,8 @@
 				C65DED7A238128E800DE99A2 /* Main.storyboard */,
 				C60D411E23DD60B20010925A /* ChooseFilterView.swift */,
 				C60D412023DD60C50010925A /* ChooseFilterView.xib */,
+				C68403E723DED54700FE412E /* EditView.swift */,
+				C68403EA23DED56700FE412E /* EditView.xib */,
 				C60D411A23DC2C340010925A /* TapAnimationButton.swift */,
 				C65DED80238128EA00DE99A2 /* Assets.xcassets */,
 				C65DED82238128EA00DE99A2 /* LaunchScreen.storyboard */,
@@ -296,6 +302,7 @@
 				C65DED84238128EA00DE99A2 /* LaunchScreen.storyboard in Resources */,
 				C65DED81238128EA00DE99A2 /* Assets.xcassets in Resources */,
 				C65DED7C238128E800DE99A2 /* Main.storyboard in Resources */,
+				C68403EB23DED56700FE412E /* EditView.xib in Resources */,
 				C60D412123DD60C50010925A /* ChooseFilterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +402,7 @@
 				C65DED79238128E800DE99A2 /* ViewController.swift in Sources */,
 				C65DED7F238128E800DE99A2 /* Film.xcdatamodeld in Sources */,
 				C60D411B23DC2C340010925A /* TapAnimationButton.swift in Sources */,
+				C68403E823DED54700FE412E /* EditView.swift in Sources */,
 				C60D411F23DD60B20010925A /* ChooseFilterView.swift in Sources */,
 				C65DED75238128E800DE99A2 /* AppDelegate.swift in Sources */,
 				C65DED77238128E800DE99A2 /* SceneDelegate.swift in Sources */,
