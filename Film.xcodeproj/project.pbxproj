@@ -10,6 +10,7 @@
 		22FB66DE17C0DB61EFAED44D /* Pods_FilmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A88830666B5E6D924EF8F53 /* Pods_FilmTests.framework */; };
 		3C69B839C523672A0E5D0840 /* Pods_Film.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBAF96EBEC6BDE9FD888D4AE /* Pods_Film.framework */; };
 		8E3970C66878B87EF02637FA /* Pods_FilmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85B9859A72D231E348DC70B /* Pods_FilmUITests.framework */; };
+		C6033D7E23E4258300071BDE /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6033D7D23E4258300071BDE /* Delegate.swift */; };
 		C60D411B23DC2C340010925A /* TapAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D411A23DC2C340010925A /* TapAnimationButton.swift */; };
 		C60D411F23DD60B20010925A /* ChooseFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D411E23DD60B20010925A /* ChooseFilterView.swift */; };
 		C60D412123DD60C50010925A /* ChooseFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60D412023DD60C50010925A /* ChooseFilterView.xib */; };
@@ -53,6 +54,7 @@
 		571CC1AF4919FF15B512EDFB /* Pods-FilmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmUITests.debug.xcconfig"; path = "Target Support Files/Pods-FilmUITests/Pods-FilmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B312C8649E94275A82451ED /* Pods-FilmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmTests.debug.xcconfig"; path = "Target Support Files/Pods-FilmTests/Pods-FilmTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F39B1A77C36E3470DF94003 /* Pods-FilmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmUITests.release.xcconfig"; path = "Target Support Files/Pods-FilmUITests/Pods-FilmUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C6033D7D23E4258300071BDE /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		C60D411A23DC2C340010925A /* TapAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAnimationButton.swift; sourceTree = "<group>"; };
 		C60D411E23DD60B20010925A /* ChooseFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFilterView.swift; sourceTree = "<group>"; };
 		C60D412023DD60C50010925A /* ChooseFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseFilterView.xib; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				C65DED74238128E800DE99A2 /* AppDelegate.swift */,
 				C65DED76238128E800DE99A2 /* SceneDelegate.swift */,
+				C6033D7D23E4258300071BDE /* Delegate.swift */,
 				C65DED78238128E800DE99A2 /* ViewController.swift */,
 				C62E691623935C460041624A /* CameraViewController.swift */,
 				C62E6918239363170041624A /* EditingViewController.swift */,
@@ -403,6 +406,7 @@
 				C65DED7F238128E800DE99A2 /* Film.xcdatamodeld in Sources */,
 				C60D411B23DC2C340010925A /* TapAnimationButton.swift in Sources */,
 				C68403E823DED54700FE412E /* EditView.swift in Sources */,
+				C6033D7E23E4258300071BDE /* Delegate.swift in Sources */,
 				C60D411F23DD60B20010925A /* ChooseFilterView.swift in Sources */,
 				C65DED75238128E800DE99A2 /* AppDelegate.swift in Sources */,
 				C65DED77238128E800DE99A2 /* SceneDelegate.swift in Sources */,

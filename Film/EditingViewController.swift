@@ -1,5 +1,6 @@
 import UIKit
 
+@available(iOS 13.0, *)
 class EditingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate {
     
     @IBOutlet var cameraImageView: UIImageView!
@@ -24,10 +25,9 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
             scrollContentView.frame = CGRect(x: 20, y: 0, width: 780, height: 30)
             
             //上部のスクロールビューに多数のボタンを配置
-            for i in 0...1 {
+            for i in 0...5 {
                 let button = UIButton()
                 //サイズ
-                
                 button.frame = CGRect(x: (i*120), y: 8, width: 90, height: 20)
                 button.backgroundColor = UIColor.red
                 //タグ
@@ -42,12 +42,10 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
                 //vcに載せる
                 scrollContentView.addSubview(button)
             }
-            
             //スクロールビューにvcを配置
             menuScrollView.addSubview(scrollContentView)
             menuScrollView.contentSize = scrollContentView.bounds.size
     }
-    
     
     func setTitleForButton(tag:Int, button:UIButton){
         switch tag {
@@ -56,15 +54,15 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         case 1:
             button.setTitle("Edit", for: .normal)
         case 2:
-            button.setTitle("Edit", for: .normal)
+            button.setTitle("2", for: .normal)
         case 3:
-            button.setTitle("文学", for: .normal)
+            button.setTitle("3", for: .normal)
         case 4:
-            button.setTitle("社会", for: .normal)
+            button.setTitle("4", for: .normal)
         case 5:
-            button.setTitle("科学", for: .normal)
-        case 6:
-            button.setTitle("ビジネス", for: .normal)
+            button.setTitle("5", for: .normal)
+//        case 6:
+//            button.setTitle("6", for: .normal)
         default:
             break
         }
@@ -88,8 +86,8 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
             print("4")
         case 5:
             print("5")
-        case 6:
-            print("6")
+//        case 6:
+//            print("6")
         default:
             break
         }
@@ -97,10 +95,10 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func sliderValue(_ sender: UISlider) {
-        filterText = String(sender.value * 2)
+//        filterText = String(sender.value * 2)
+        let appDelegate = UIApplication.shared.delegate as! Delegate
         let filterImage: CIImage = CIImage(image: pic)!
-        
-        print(filterText)
+        filterText = appDelegate.filterText
         filter = CIFilter(name: "CIColorControls")!
         filter.setValue(filterImage, forKey: kCIInputImageKey)
         filter.setValue(filterText, forKey: "inputSaturation")
@@ -110,6 +108,18 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         let ctx = CIContext(options: nil)
         let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
         cameraImageView.image = UIImage(cgImage: cgImage!)
+    }
+    
+    @IBAction func reload() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let filterImage: CIImage = CIImage(image: pic)!
+                filterText = appDelegate.filterText
+                filter = CIFilter(name: "CIColorControls")!
+                filter.setValue(filterImage, forKey: kCIInputImageKey)
+                filter.setValue(filterText, forKey: "inputSaturation")
+                let ctx = CIContext(options: nil)
+                let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
+                cameraImageView.image = UIImage(cgImage: cgImage!)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
