@@ -7,35 +7,57 @@ protocol EditViewDelegate: class {
 
 class EditView: UIView {
     
-    var delegate: EditViewDelegate?
-    @IBOutlet var cameraImageView: UIImageView!
+    @IBOutlet var colorSlider: UISlider!
     var filter: CIFilter!
     var filterText: String?
     var pic: UIImage!
-    var colorSlider: UISlider!
+    var view: UIView! {
+        didSet {
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+    weak var delegate: EditViewDelegate?
+
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        instantinateFromNib()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        instantinateFromNib()
+    }
+    
+    func instantinateFromNib() {
+        view = Bundle(for: type(of: self)).loadNibNamed("EditView", owner: self, options: nil)?.first as? UIView
+        addSubview(view)
+        NSLayoutConstraint.activate([
+        view.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+        view.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+        view.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+        view.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
+        ])
+    }
     
     @IBAction func sliderValue(_ sender: UISlider) {
-//        filterText = String(sender.value * 2)
-//        let appDelegate = UIApplication.shared.delegate as! EditViewDelegate
-//        appDelegate.filterText = filterText
-//
-//        print(appDelegate.filterText)
-//        reload()
         delegate?.passSliderValue()
+        print("delegate Called")
     }
+
     
-    func reload() {
-        let appDelegate = UIApplication.shared.delegate as! EditViewDelegate
-        pic = appDelegate.imageName
-        let filterImage: CIImage = CIImage(image: pic)!
-        filterText = appDelegate.filterText
-        filter = CIFilter(name: "CIColorControls")!
-        filter.setValue(filterImage, forKey: kCIInputImageKey)
-        filter.setValue(filterText, forKey: "inputSaturation")
-        print(filter)
-        let ctx = CIContext(options: nil)
-        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-//        cameraImageView.image = UIImage(cgImage: cgImage!)
-    }
+//    func reload() {
+//        let appDelegate = UIApplication.shared.delegate as! EditViewDelegate
+//        pic = appDelegate.imageName
+//        let filterImage: CIImage = CIImage(image: pic)!
+//        filterText = appDelegate.filterText
+//        filter = CIFilter(name: "CIColorControls")!
+//        filter.setValue(filterImage, forKey: kCIInputImageKey)
+//        filter.setValue(filterText, forKey: "inputSaturation")
+//        print(filter)
+//        let ctx = CIContext(options: nil)
+//        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
+////        cameraImageView.image = UIImage(cgImage: cgImage!)
+//    }
     
 }

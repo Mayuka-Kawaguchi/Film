@@ -10,20 +10,17 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     var filter: CIFilter!
     var pic: UIImage!
     var filterText: String?
-    var editView = EditView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraImageView.image = pic
         menuScrollView.contentSize = CGSize(width: menuScrollView.frame.size.width * 3, height: menuScrollView.frame.size.height)
         horizontalScroll()
-        editView.delegate = self
     }
 
     func horizontalScroll() {
             //crollContentViewのframe
             scrollContentView.frame = CGRect(x: 20, y: 0, width: 780, height: 30)
-            
             //上部のスクロールビューに多数のボタンを配置
             for i in 0...5 {
                 let button = UIButton()
@@ -69,14 +66,27 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @objc func onClick(sender: UIButton) {
+        let subviews = menuView.subviews
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
         switch sender.tag {
         case 0:
             print("0")
-            var filterView = UINib(nibName: "ChooseFilterView", bundle: Bundle.main).instantiate(withOwner: self, options: nil).first as? UIView
-            menuView.addSubview(filterView!)
+//            var filterView = UINib(nibName: "ChooseFilterView", bundle: Bundle.main).instantiate(withOwner: self, options: nil).first as? UIView
+//            menuView.addSubview(filterView!)
         case 1:
             print("1")
+            let editView = EditView(frame: .zero)
+            editView.delegate = self
             menuView.addSubview(editView)
+            NSLayoutConstraint.activate([
+                editView.topAnchor.constraint(equalTo: menuView.topAnchor),
+                editView.bottomAnchor.constraint(equalTo: menuView.bottomAnchor),
+                editView.leadingAnchor.constraint(equalTo: menuView.leadingAnchor),
+                editView.trailingAnchor.constraint(equalTo: menuView.trailingAnchor)
+            ])
+            
         case 2:
             print("2")
         case 3:
@@ -93,35 +103,35 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
-//    Sliderの値をし画像に反映させる
-    @IBAction func sliderValue(_ sender: UISlider) {
-//        filterText = String(sender.value * 2)
-        let appDelegate = UIApplication.shared.delegate as! Delegate
-        let filterImage: CIImage = CIImage(image: pic)!
-        filterText = appDelegate.filterText
-        filter = CIFilter(name: "CIColorControls")!
-        filter.setValue(filterImage, forKey: kCIInputImageKey)
-        filter.setValue(filterText, forKey: "inputSaturation")
-        filter.setValue(0.5, forKey: "inputBrightness")
-        filter.setValue(2.0, forKey: "inputContrast")
-        print(filter)
-        let ctx = CIContext(options: nil)
-        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-        cameraImageView.image = UIImage(cgImage: cgImage!)
-    }
+////    Sliderの値をし画像に反映させる
+//    @IBAction func sliderValue(_ sender: UISlider) {
+////        filterText = String(sender.value * 2)
+////        let appDelegate = UIApplication.shared.delegate as! Delegate
+////        let filterImage: CIImage = CIImage(image: pic)!
+////        filterText = appDelegate.filterText
+////        filter = CIFilter(name: "CIColorControls")!
+////        filter.setValue(filterImage, forKey: kCIInputImageKey)
+////        filter.setValue(filterText, forKey: "inputSaturation")
+////        filter.setValue(0.5, forKey: "inputBrightness")
+////        filter.setValue(2.0, forKey: "inputContrast")
+////        print(filter)
+////        let ctx = CIContext(options: nil)
+////        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
+////        cameraImageView.image = UIImage(cgImage: cgImage!)
+//    }
     
-//    FIXME:リロードしないとSliderの値が反映されない
-    func reload() {
-        let filterImage: CIImage = CIImage(image: pic)!
-//        filterText = editView.colorSlider()
-        filter = CIFilter(name: "CIColorControls")!
-        filter.setValue(filterImage, forKey: kCIInputImageKey)
-        filter.setValue(filterText, forKey: "inputSaturation")
-        let ctx = CIContext(options: nil)
-        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-        cameraImageView.image = UIImage(cgImage: cgImage!)
-    }
-    
+////    FIXME:リロードしないとSliderの値が反映されない
+//    func reload() {
+//        let filterImage: CIImage = CIImage(image: pic)!
+////        filterText = String(editView.colorSlider.value * 2)
+//        filter = CIFilter(name: "CIColorControls")!
+//        filter.setValue(cameraImageView, forKey: kCIInputImageKey)
+//        filter.setValue(filterText, forKey: "inputSaturation")
+//        let ctx = CIContext(options: nil)
+//        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
+//        cameraImageView.image = UIImage(cgImage: cgImage!)
+//    }
+//
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(menuScrollView.contentOffset.x / menuScrollView.frame.size.width)
     }
@@ -156,7 +166,7 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
 
 extension EditingViewController: EditViewDelegate {
     func passSliderValue() {
-        reload()
+//        reload()
         print("aaaaa")
     }
 }
