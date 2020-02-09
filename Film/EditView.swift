@@ -1,25 +1,31 @@
 import UIKit
 
-@available(iOS 13.0, *)
+protocol EditViewDelegate: class {
+    func passSliderValue()
+}
+
+
 class EditView: UIView {
     
-    var delegate: Delegate? 
+    var delegate: EditViewDelegate?
     @IBOutlet var cameraImageView: UIImageView!
     var filter: CIFilter!
     var filterText: String?
     var pic: UIImage!
+    var colorSlider: UISlider!
     
     @IBAction func sliderValue(_ sender: UISlider) {
-        filterText = String(sender.value * 2)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.filterText = filterText
-        
-        print(appDelegate.filterText)
-        reload()
+//        filterText = String(sender.value * 2)
+//        let appDelegate = UIApplication.shared.delegate as! EditViewDelegate
+//        appDelegate.filterText = filterText
+//
+//        print(appDelegate.filterText)
+//        reload()
+        delegate?.passSliderValue()
     }
     
     func reload() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! EditViewDelegate
         pic = appDelegate.imageName
         let filterImage: CIImage = CIImage(image: pic)!
         filterText = appDelegate.filterText
@@ -31,4 +37,5 @@ class EditView: UIView {
         let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
 //        cameraImageView.image = UIImage(cgImage: cgImage!)
     }
+    
 }

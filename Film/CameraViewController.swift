@@ -2,16 +2,16 @@ import UIKit
 import AVFoundation
 
 class CameraViewController: UIViewController {
-    
     @IBOutlet var cameraButton: UIButton!
     @IBOutlet var backButton: UIButton!
-
+    
     var captureSession = AVCaptureSession()
     var mainCamera: AVCaptureDevice?
     var innerCamera: AVCaptureDevice?
     var currentDevice: AVCaptureDevice?
-    var photoOutput : AVCapturePhotoOutput?
-    var cameraPreviewLayer : AVCaptureVideoPreviewLayer?
+    var photoOutput: AVCapturePhotoOutput?
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    var tapPoint: CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,15 @@ class CameraViewController: UIViewController {
         styleCaptureButton()
         styleBackButton()
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch: AnyObject in touches {
+            let touch: UITouch = touch as! UITouch
+            tapPoint = touch.location(in: self.view)
+            print(tapPoint)
+        }
+    }
+    
     @IBAction func cameraButtonTouched() {
         let settings = AVCapturePhotoSettings()
         // フラッシュの設定
@@ -39,7 +47,7 @@ class CameraViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-//FIXME: *****
+    //FIXME: *****
     func showSucsessAlert() {
         let alert = UIAlertController(title: "投稿完了", message: "投稿が完了しました。タイムラインに戻ります。", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -52,7 +60,6 @@ class CameraViewController: UIViewController {
 
 //AVCapturePhotoCaptureDelegate
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
-    
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             let uiImage = UIImage(data: imageData)!
@@ -65,13 +72,11 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         }
         print("AVCapturePhotoCaptureDelegate")
     }
-    
 }
 
 //カメラ設定
 extension CameraViewController {
     // カメラの画質の設定
-    
     func setupCaptureSession() {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
     }
@@ -84,22 +89,20 @@ extension CameraViewController {
         self.cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         // プレビューレイヤの表示の向きを設定
         self.cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        
+        //画面サイズ取得
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
-
         self.cameraPreviewLayer?.frame = CGRect(x: width*0.25, y: height*0.08, width: width*0.55, height: width*0.7)
-//        self.cameraPreviewLayer?.frame = view.frame
+        //        self.cameraPreviewLayer?.frame = view.frame
         self.view.layer.insertSublayer(self.cameraPreviewLayer!, at: 0)
     }
-
+    
     // デバイスの設定
     func setupDevice() {
         // カメラデバイスのプロパティ設定
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
         // プロパティの条件を満たしたカメラデバイスの取得
         let devices = deviceDiscoverySession.devices
-
         for device in devices {
             if device.position == AVCaptureDevice.Position.back {
                 mainCamera = device
@@ -110,7 +113,7 @@ extension CameraViewController {
         // 起動時のカメラを設定
         currentDevice = mainCamera
     }
-
+    
     func setupInputOutput() {
         do {
             // 指定したデバイスを使用するために入力を初期化
@@ -126,7 +129,7 @@ extension CameraViewController {
             print(error)
         }
     }
-
+    
     // ボタンのスタイル
     func styleCaptureButton() {
         cameraButton.layer.borderColor = UIColor.white.cgColor
