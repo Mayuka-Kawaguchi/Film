@@ -17,6 +17,8 @@
 		C60D412123DD60C50010925A /* ChooseFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60D412023DD60C50010925A /* ChooseFilterView.xib */; };
 		C62E691723935C460041624A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E691623935C460041624A /* CameraViewController.swift */; };
 		C62E6919239363170041624A /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E6918239363170041624A /* EditingViewController.swift */; };
+		C6428A382402264600F9BC91 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6428A372402264600F9BC91 /* FilterView.xib */; };
+		C6428A3A240226C400F9BC91 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6428A39240226C400F9BC91 /* FilterView.swift */; };
 		C65DED75238128E800DE99A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED74238128E800DE99A2 /* AppDelegate.swift */; };
 		C65DED77238128E800DE99A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED76238128E800DE99A2 /* SceneDelegate.swift */; };
 		C65DED79238128E800DE99A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65DED78238128E800DE99A2 /* ViewController.swift */; };
@@ -62,6 +64,8 @@
 		C60D412023DD60C50010925A /* ChooseFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseFilterView.xib; sourceTree = "<group>"; };
 		C62E691623935C460041624A /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C62E6918239363170041624A /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
+		C6428A372402264600F9BC91 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		C6428A39240226C400F9BC91 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		C65DED71238128E800DE99A2 /* Film.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Film.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65DED74238128E800DE99A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65DED76238128E800DE99A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +171,9 @@
 				C62E6918239363170041624A /* EditingViewController.swift */,
 				C60D411E23DD60B20010925A /* ChooseFilterView.swift */,
 				C60D412023DD60C50010925A /* ChooseFilterView.xib */,
+				C6428A39240226C400F9BC91 /* FilterView.swift */,
 				C68403E723DED54700FE412E /* EditView.swift */,
+				C6428A372402264600F9BC91 /* FilterView.xib */,
 				C68403EA23DED56700FE412E /* EditView.xib */,
 				C6026D6C23EF10E800F51496 /* TapPointViewController.swift */,
 				C65DED7A238128E800DE99A2 /* Main.storyboard */,
@@ -309,6 +315,7 @@
 				C65DED81238128EA00DE99A2 /* Assets.xcassets in Resources */,
 				C65DED7C238128E800DE99A2 /* Main.storyboard in Resources */,
 				C68403EB23DED56700FE412E /* EditView.xib in Resources */,
+				C6428A382402264600F9BC91 /* FilterView.xib in Resources */,
 				C60D412123DD60C50010925A /* ChooseFilterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +414,7 @@
 				C62E6919239363170041624A /* EditingViewController.swift in Sources */,
 				C65DED79238128E800DE99A2 /* ViewController.swift in Sources */,
 				C65DED7F238128E800DE99A2 /* Film.xcdatamodeld in Sources */,
+				C6428A3A240226C400F9BC91 /* FilterView.swift in Sources */,
 				C60D411B23DC2C340010925A /* TapAnimationButton.swift in Sources */,
 				C68403E823DED54700FE412E /* EditView.swift in Sources */,
 				C6033D7E23E4258300071BDE /* Delegate.swift in Sources */,
@@ -588,7 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WP7PXW856A;
+				DEVELOPMENT_TEAM = M4AZ9V7T34;
 				INFOPLIST_FILE = Film/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -608,7 +616,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WP7PXW856A;
+				DEVELOPMENT_TEAM = M4AZ9V7T34;
 				INFOPLIST_FILE = Film/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

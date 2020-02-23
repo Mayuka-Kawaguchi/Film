@@ -1,13 +1,21 @@
+//
+//  FilterView.swift
+//  Film
+//
+//  Created by K Mayuka on 2020/02/23.
+//  Copyright © 2020 K Mayuka. All rights reserved.
+//
+
 import UIKit
 
-protocol EditViewDelegate: class {
+protocol FilterViewDelegate: class {
     func passSliderValue()
 }
 
 
-class EditView: UIView {
+class FilterView: UIView {
     
-    @IBOutlet var colorSlider: UISlider!
+//    @IBOutlet var inversionButton: UIButton!
     var filter: CIFilter!
     var filterText: String?
     var pic: UIImage!
@@ -17,7 +25,7 @@ class EditView: UIView {
         }
     }
     var transMiller = CGAffineTransform()
-    weak var delegate: EditViewDelegate?
+    weak var delegate: FilterViewDelegate?
 
     
     override init(frame: CGRect) {
@@ -31,7 +39,7 @@ class EditView: UIView {
     }
     
     func instantinateFromNib() {
-        view = Bundle(for: type(of: self)).loadNibNamed("EditView", owner: self, options: nil)?.first as? UIView
+        view = Bundle(for: type(of: self)).loadNibNamed("FilterView", owner: self, options: nil)?.first as? UIView
         addSubview(view)
         NSLayoutConstraint.activate([
         view.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
@@ -41,17 +49,13 @@ class EditView: UIView {
         ])
     }
     
-    @IBAction func sliderValue(_ sender: UISlider) {
-        delegate?.passSliderValue()
-        print("delegate Called")
-    }
-
-    @IBAction func inversion() {
+   @IBAction func inversion() {
         let picker = view
         transMiller = CGAffineTransform(scaleX: -1, y: 1)
         picker!.transform = transMiller
         print("inversion")
     }
+
     
 //    func reload() {
 //        let appDelegate = UIApplication.shared.delegate as! EditViewDelegate
@@ -68,3 +72,4 @@ class EditView: UIView {
 //    }
     
 }
+

@@ -15,6 +15,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("aaaaaaaaaaaaaaaaaaaa")
     }
     
     @IBAction func startCamera() {

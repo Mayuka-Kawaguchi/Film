@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>ああああ</string>
+	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>aaa</string>
+	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>ライブラリを使用します</string>
 	<key>CFBundleDevelopmentRegion</key>

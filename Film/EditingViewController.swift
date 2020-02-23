@@ -73,6 +73,9 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         switch sender.tag {
         case 0:
             print("0")
+             let filterView = FilterView(frame: .zero)
+            filterView.delegate = self as? FilterViewDelegate
+            menuView.addSubview(filterView)
 //            var filterView = UINib(nibName: "ChooseFilterView", bundle: Bundle.main).instantiate(withOwner: self, options: nil).first as? UIView
 //            menuView.addSubview(filterView!)
         case 1:
