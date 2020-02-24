@@ -1,142 +1,27 @@
 import UIKit
 
-class EditingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate {
+class EditingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarDelegate{
     
     @IBOutlet var cameraImageView: UIImageView!
-    @IBOutlet var menuScrollView: UIScrollView!
-    @IBOutlet var menuView: UIView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    var scrollContentView = UIView()
+    @IBOutlet var editViewController: EditTabViewController!
+    @IBOutlet var colorSlider: UISlider!
     var filter: CIFilter!
     var pic: UIImage!
     var filterText: String?
+    var transMiller = CGAffineTransform()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraImageView.image = pic
-        menuScrollView.contentSize = CGSize(width: menuScrollView.frame.size.width * 3, height: menuScrollView.frame.size.height)
-        horizontalScroll()
+        EditViewDelegate.self
+    }
+    
+    @IBAction func colorSliderValue(_ sender: UISlider) {
+        print(sender.value)
     }
 
-    func horizontalScroll() {
-            //crollContentViewのframe
-            scrollContentView.frame = CGRect(x: 20, y: 0, width: 780, height: 30)
-            //上部のスクロールビューに多数のボタンを配置
-            for i in 0...5 {
-                let button = UIButton()
-                //サイズ
-                button.frame = CGRect(x: (i*120), y: 8, width: 90, height: 20)
-                button.backgroundColor = UIColor.red
-                //タグ
-                button.tag = i
-                //buttonに文字を挿入
-                setTitleForButton(tag: button.tag, button: button)
-                //button.titleの色
-                button.setTitleColor(.white, for: .normal)
-                button.layer.borderWidth = 1
-                //buttonに処理を追加
-                button.addTarget(self, action: #selector(onClick(sender:)), for: .touchUpInside)
-                //vcに載せる
-                scrollContentView.addSubview(button)
-            }
-            //スクロールビューにvcを配置
-            menuScrollView.addSubview(scrollContentView)
-            menuScrollView.contentSize = scrollContentView.bounds.size
-    }
-    
-    func setTitleForButton(tag:Int, button:UIButton){
-        switch tag {
-        case 0:
-            button.setTitle("Filter", for: .normal)
-        case 1:
-            button.setTitle("Edit", for: .normal)
-        case 2:
-            button.setTitle("2", for: .normal)
-        case 3:
-            button.setTitle("3", for: .normal)
-        case 4:
-            button.setTitle("4", for: .normal)
-        case 5:
-            button.setTitle("5", for: .normal)
-//        case 6:
-//            button.setTitle("6", for: .normal)
-        default:
-            break
-        }
-    }
-    
-    @objc func onClick(sender: UIButton) {
-        let subviews = menuView.subviews
-        for subview in subviews {
-            subview.removeFromSuperview()
-        }
-        switch sender.tag {
-        case 0:
-            print("0")
-             let filterView = FilterView(frame: .zero)
-            filterView.delegate = self as? FilterViewDelegate
-            menuView.addSubview(filterView)
-//            var filterView = UINib(nibName: "ChooseFilterView", bundle: Bundle.main).instantiate(withOwner: self, options: nil).first as? UIView
-//            menuView.addSubview(filterView!)
-        case 1:
-            print("1")
-            let editView = EditView(frame: .zero)
-            editView.delegate = self
-            menuView.addSubview(editView)
-            NSLayoutConstraint.activate([
-                editView.topAnchor.constraint(equalTo: menuView.topAnchor),
-                editView.bottomAnchor.constraint(equalTo: menuView.bottomAnchor),
-                editView.leadingAnchor.constraint(equalTo: menuView.leadingAnchor),
-                editView.trailingAnchor.constraint(equalTo: menuView.trailingAnchor)
-            ])
-            
-        case 2:
-            print("2")
-        case 3:
-            print("3")
-        case 4:
-            print("4")
-        case 5:
-            print("5")
-//        case 6:
-//            print("6")
-        default:
-            break
-        }
-        
-    }
-    
-////    Sliderの値をし画像に反映させる
-//    @IBAction func sliderValue(_ sender: UISlider) {
-////        filterText = String(sender.value * 2)
-////        let appDelegate = UIApplication.shared.delegate as! Delegate
-////        let filterImage: CIImage = CIImage(image: pic)!
-////        filterText = appDelegate.filterText
-////        filter = CIFilter(name: "CIColorControls")!
-////        filter.setValue(filterImage, forKey: kCIInputImageKey)
-////        filter.setValue(filterText, forKey: "inputSaturation")
-////        filter.setValue(0.5, forKey: "inputBrightness")
-////        filter.setValue(2.0, forKey: "inputContrast")
-////        print(filter)
-////        let ctx = CIContext(options: nil)
-////        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-////        cameraImageView.image = UIImage(cgImage: cgImage!)
-//    }
-    
-////    FIXME:リロードしないとSliderの値が反映されない
-//    func reload() {
-//        let filterImage: CIImage = CIImage(image: pic)!
-////        filterText = String(editView.colorSlider.value * 2)
-//        filter = CIFilter(name: "CIColorControls")!
-//        filter.setValue(cameraImageView, forKey: kCIInputImageKey)
-//        filter.setValue(filterText, forKey: "inputSaturation")
-//        let ctx = CIContext(options: nil)
-//        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-//        cameraImageView.image = UIImage(cgImage: cgImage!)
-//    }
-//
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(menuScrollView.contentOffset.x / menuScrollView.frame.size.width)
+    @IBAction func inversion() {
+        print("inversion")
     }
     
     @IBAction func savePhoto() {
@@ -169,7 +54,7 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
 
 extension EditingViewController: EditViewDelegate {
     func passSliderValue() {
-//        reload()
+        viewDidLoad()
         print("aaaaa")
     }
 }

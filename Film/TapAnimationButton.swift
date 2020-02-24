@@ -2,6 +2,11 @@ import UIKit
 
 
 class TapAnimationButton: UIButton {
+    
+    @IBInspectable var cornerRadius: CGFloat = 0.0
+    @IBInspectable var borderWidth: CGFloat = 0.0
+    @IBInspectable var borderColor: UIColor = UIColor.white
+    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -13,6 +18,13 @@ class TapAnimationButton: UIButton {
         commonInit()
     }
 
+    override func draw(_ rect: CGRect) {
+        layer.cornerRadius = cornerRadius
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColor.cgColor
+        clipsToBounds = true
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         touchStartAnimation()
@@ -37,7 +49,7 @@ extension TapAnimationButton {
     internal func commonInit(){
         self.layer.shadowOffset = CGSize(width: 1, height: 1 )
         self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.cornerRadius = 8
+//        self.layer.cornerRadius = 8
         self.layer.shadowRadius = 5
         self.layer.shadowOpacity = 0.4
     }

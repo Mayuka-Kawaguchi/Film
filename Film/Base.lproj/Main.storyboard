@@ -25,48 +25,55 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUf-dq-elO" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
-                                <rect key="frame" x="203" y="117" width="142" height="164"/>
+                                <rect key="frame" x="209" y="406" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="filter.png">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="pen">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="openAlbum" destination="BYZ-38-t0r" eventType="touchUpInside" id="eLR-m7-60Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux3-eh-9ce" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
-                                <rect key="frame" x="46" y="310" width="142" height="164"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75686274509803919" green="0.82352941176470584" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="OBd-Lw-mps" kind="presentation" id="Qny-lN-xoW"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fc-wi-BRS">
-                                <rect key="frame" x="67" y="500" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEC-jz-h5Q" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
-                                <rect key="frame" x="42" y="117" width="142" height="164"/>
+                                <rect key="frame" x="45" y="406" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="camera.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="camera"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="gqH-pc-JNm" kind="presentation" identifier="startCamera" id="uNv-Nd-dOi"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.039215686274509803" green="0.090196078431372548" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="photoImageView" destination="9fc-wi-BRS" id="7fZ-y5-PJM"/>
+                        <outlet property="cameraButton" destination="JEC-jz-h5Q" id="RR2-8O-qpD"/>
+                        <outlet property="editButton" destination="mUf-dq-elO" id="fhW-D2-WPp"/>
                         <segue destination="DvH-Ko-YgR" kind="presentation" identifier="toPhoto" id="7o9-vV-Lcp"/>
                     </connections>
                 </viewController>
@@ -93,7 +100,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZQ-y0-JZ1">
                                 <rect key="frame" x="159" y="557" width="57" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.090196078431372548" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -118,12 +125,12 @@
         <scene sceneID="yG2-Di-1jc">
             <objects>
                 <viewController restorationIdentifier="FilterViewController" storyboardIdentifier="FilterViewController" modalPresentationStyle="fullScreen" id="DvH-Ko-YgR" customClass="EditingViewController" customModule="Film" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9p6-K7-q8x">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="9p6-K7-q8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mqh-0a-IzZ">
-                                <rect key="frame" x="16" y="99" width="343" height="331"/>
+                                <rect key="frame" x="20" y="99" width="335" height="323"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nz-3z-vtF" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
@@ -146,22 +153,58 @@
                                     <action selector="snsPhoto" destination="DvH-Ko-YgR" eventType="touchUpInside" id="Bo7-Nj-r73"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ba-hR-zcH">
-                                <rect key="frame" x="0.0" y="436" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96848052740000001" green="0.83128049110000002" blue="0.40515463680000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="wq2-Zm-QbN"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="jxm-7Y-Q6n"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8P-ZD-ZUE">
+                                <rect key="frame" x="0.0" y="438" width="375" height="229"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-Ij-ayZ">
+                                        <rect key="frame" x="373" y="0.0" width="1125" height="221"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-3M-dJk">
+                                                <rect key="frame" x="84" y="110" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="inversion" destination="DvH-Ko-YgR" eventType="touchUpInside" id="HqV-Wr-FpA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKQ-qX-XdS">
+                                                <rect key="frame" x="380" y="110" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzv-oH-0g6">
+                                                <rect key="frame" x="933" y="95" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DTt-jW-Yce">
+                                                <rect key="frame" x="131" y="53" width="118" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="colorSliderValue:" destination="DvH-Ko-YgR" eventType="touchUpInside" id="cRR-N1-fs6"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xtc-Ij-ayZ" firstAttribute="top" secondItem="ipK-47-aNS" secondAttribute="top" id="2mg-Fq-t5S"/>
+                                    <constraint firstAttribute="width" secondItem="C8P-ZD-ZUE" secondAttribute="height" multiplier="375:229" id="L2o-kK-9c0"/>
+                                    <constraint firstItem="xtc-Ij-ayZ" firstAttribute="leading" secondItem="j4C-Sq-PKp" secondAttribute="leading" id="OIa-DN-gNF"/>
+                                    <constraint firstItem="xtc-Ij-ayZ" firstAttribute="bottom" secondItem="ipK-47-aNS" secondAttribute="bottom" constant="1" id="PKM-sP-neb"/>
+                                    <constraint firstItem="xtc-Ij-ayZ" firstAttribute="leading" secondItem="C8P-ZD-ZUE" secondAttribute="leading" id="VOs-bT-tDo"/>
+                                    <constraint firstAttribute="height" constant="220" id="aeA-Co-bWt"/>
+                                    <constraint firstItem="xtc-Ij-ayZ" firstAttribute="width" secondItem="ipK-47-aNS" secondAttribute="width" multiplier="3" id="jm4-Zh-zeW"/>
+                                    <constraint firstItem="xtc-Ij-ayZ" firstAttribute="width" secondItem="j4C-Sq-PKp" secondAttribute="width" id="zS8-NB-OC6"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="j4C-Sq-PKp"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ipK-47-aNS"/>
                             </scrollView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rKe-pA-6eC">
-                                <rect key="frame" x="0.0" y="484" width="375" height="183"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWU-UP-xbi" customClass="TapAnimationButton" customModule="Film" customModuleProvider="target">
-                                <rect key="frame" x="19" y="20" width="46" height="46"/>
+                                <rect key="frame" x="17" y="20" width="46" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -169,45 +212,43 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="23"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1.75"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="backButtonTouched" destination="DvH-Ko-YgR" eventType="touchUpInside" id="Nqh-FT-SXi"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="C8P-ZD-ZUE" firstAttribute="trailing" secondItem="4Fj-Wy-7o9" secondAttribute="trailing" id="3nU-Cf-7cf"/>
+                            <constraint firstItem="C8P-ZD-ZUE" firstAttribute="leading" secondItem="4Fj-Wy-7o9" secondAttribute="leading" id="66j-VI-yIy"/>
+                            <constraint firstItem="C8P-ZD-ZUE" firstAttribute="bottom" secondItem="4Fj-Wy-7o9" secondAttribute="bottom" id="Dsw-3Y-xon"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Fj-Wy-7o9"/>
                     </view>
                     <navigationItem key="navigationItem" id="C2l-ep-ALL"/>
                     <connections>
                         <outlet property="cameraImageView" destination="Mqh-0a-IzZ" id="hsy-vG-1PY"/>
-                        <outlet property="menuScrollView" destination="4ba-hR-zcH" id="fKX-jW-lB6"/>
-                        <outlet property="menuView" destination="rKe-pA-6eC" id="ABp-ld-z7z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptJ-M9-3te" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="903.59820089955031"/>
-        </scene>
-        <!--Tap Point View Controller-->
-        <scene sceneID="vuh-6E-I0t">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="OBd-Lw-mps" customClass="TapPointViewController" customModule="Film" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="og0-NE-dKn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="jGH-LW-srK"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zct-IY-hwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="327" y="1160"/>
+            <point key="canvasLocation" x="1589.5999999999999" y="1014.2428785607198"/>
         </scene>
     </scenes>
     <resources>
         <image name="back2.png" width="64" height="64"/>
+        <image name="camera" width="100" height="100"/>
         <image name="camera.png" width="100" height="100"/>
-        <image name="filter.png" width="96" height="96"/>
+        <image name="pen" width="417" height="417"/>
     </resources>
 </document>
