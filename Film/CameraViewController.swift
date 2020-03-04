@@ -129,7 +129,6 @@ extension CameraViewController {
             print(error)
         }
     }
-    
     // ボタンのスタイル
     func styleCaptureButton() {
         cameraButton.layer.borderColor = UIColor.white.cgColor

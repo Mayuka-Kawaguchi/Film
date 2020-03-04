@@ -27,6 +27,7 @@ class EditTabViewController: UIViewController,UITableViewDelegate {
     @IBAction func sliderValue(_ sender: UISlider) {
         delegate?.passSliderValue()
         print("delegate Called")
+        
     }
 
     @IBAction func inversion() {

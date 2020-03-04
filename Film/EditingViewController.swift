@@ -3,25 +3,40 @@ import UIKit
 class EditingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarDelegate{
     
     @IBOutlet var cameraImageView: UIImageView!
-    @IBOutlet var editViewController: EditTabViewController!
-    @IBOutlet var colorSlider: UISlider!
     var filter: CIFilter!
     var pic: UIImage!
     var filterText: String?
     var transMiller = CGAffineTransform()
+    var contrast: Float = 0.5
+    var brightness: Float = 0
+    var saturation: Float = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraImageView.image = pic
-        EditViewDelegate.self
     }
     
-    @IBAction func colorSliderValue(_ sender: UISlider) {
-        print(sender.value)
+    @IBAction func colorSliderValue(_ sender: Any) {
+        guard let slider = sender as? UISlider, let identifier = slider.accessibilityIdentifier else { return }
+        switch identifier {
+        case "contrast":
+            self.contrast = slider.value
+        case "brightness":
+            self.brightness = slider.value
+        case "saturation":
+            self.saturation = slider.value
+        default: break
+        }
+        imageFilter()
+        print(contrast)
     }
-
+    
     @IBAction func inversion() {
         print("inversion")
+        let picker = cameraImageView
+        transMiller = CGAffineTransform(scaleX: -1, y: 1)
+        picker!.transform = transMiller
     }
     
     @IBAction func savePhoto() {
@@ -33,7 +48,10 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
-     }
+    }
+    @IBAction func reset() {
+       cameraImageView.image = pic
+    }
     
     @IBAction func snsPhoto() {
         let shareText = "Filmで、写真加工！"
@@ -50,11 +68,20 @@ class EditingViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.dismiss(animated: true, completion: nil)
     }
     
-}
-
-extension EditingViewController: EditViewDelegate {
-    func passSliderValue() {
-        viewDidLoad()
-        print("aaaaa")
+    func imageFilter(){
+        let image = cameraImageView.image!
+        let ciImage = CIImage(image:image)
+        if let ciFilter  = CIFilter(name: "CIColorControls") {
+            ciFilter.setValue(ciImage, forKey: kCIInputImageKey)
+            ciFilter.setValue(self.contrast, forKey: "inputContrast")
+            ciFilter.setValue(self.brightness, forKey: "inputBrightness")
+            ciFilter.setValue(self.saturation, forKey: "inputSaturation")
+            let ciContext:CIContext = CIContext(options: nil)
+            if let outputImage = ciFilter.outputImage {
+                if let cgimg: CGImage = ciContext.createCGImage(outputImage, from: outputImage.extent) {
+                    cameraImageView.image = UIImage(cgImage: cgimg, scale: 1.0, orientation: UIImage.Orientation.up)
+                }
+            }
+        }
     }
 }

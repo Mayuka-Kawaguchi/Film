@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -125,7 +125,7 @@
         <scene sceneID="yG2-Di-1jc">
             <objects>
                 <viewController restorationIdentifier="FilterViewController" storyboardIdentifier="FilterViewController" modalPresentationStyle="fullScreen" id="DvH-Ko-YgR" customClass="EditingViewController" customModule="Film" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="9p6-K7-q8x">
+                    <view key="view" contentMode="scaleToFill" id="9p6-K7-q8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -148,40 +148,57 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.75686274509999996" green="0.82352941180000006" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="16"/>
-                                <state key="normal" title="SNS"/>
+                                <state key="normal" title="RESET"/>
                                 <connections>
-                                    <action selector="snsPhoto" destination="DvH-Ko-YgR" eventType="touchUpInside" id="Bo7-Nj-r73"/>
+                                    <action selector="reset" destination="DvH-Ko-YgR" eventType="touchUpInside" id="DPm-1C-CqT"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8P-ZD-ZUE">
                                 <rect key="frame" x="0.0" y="438" width="375" height="229"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-Ij-ayZ">
-                                        <rect key="frame" x="373" y="0.0" width="1125" height="221"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-Ij-ayZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="221"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-3M-dJk">
-                                                <rect key="frame" x="84" y="110" width="46" height="30"/>
+                                                <rect key="frame" x="540" y="110" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <action selector="inversion" destination="DvH-Ko-YgR" eventType="touchUpInside" id="HqV-Wr-FpA"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKQ-qX-XdS">
                                                 <rect key="frame" x="380" y="110" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="inversion" destination="DvH-Ko-YgR" eventType="touchUpInside" id="9fd-HO-p7d"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzv-oH-0g6">
                                                 <rect key="frame" x="933" y="95" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DTt-jW-Yce">
-                                                <rect key="frame" x="131" y="53" width="118" height="30"/>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="DTt-jW-Yce">
+                                                <rect key="frame" x="32" y="35" width="317" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="contrast"/>
                                                 <connections>
                                                     <action selector="colorSliderValue:" destination="DvH-Ko-YgR" eventType="touchUpInside" id="cRR-N1-fs6"/>
+                                                </connections>
+                                            </slider>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZL9-Ut-Cgp">
+                                                <rect key="frame" x="32" y="95" width="317" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="brightness"/>
+                                                <connections>
+                                                    <action selector="colorSliderValue:" destination="DvH-Ko-YgR" eventType="touchUpInside" id="Sl8-4l-IVv"/>
+                                                </connections>
+                                            </slider>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jMj-fu-SkS">
+                                                <rect key="frame" x="32" y="148" width="317" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="saturation"/>
+                                                <connections>
+                                                    <action selector="colorSliderValue:" destination="DvH-Ko-YgR" eventType="touchUpInside" id="ZxP-PP-bWm"/>
                                                 </connections>
                                             </slider>
                                         </subviews>

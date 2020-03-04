@@ -1,11 +1,6 @@
 import UIKit
 import AVFoundation
 
-
-protocol EditTabViewControllerDelegate: class {
-   
-}
-
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var cameraButton: UIButton!
