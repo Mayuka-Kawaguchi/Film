@@ -125,7 +125,7 @@
         <scene sceneID="yG2-Di-1jc">
             <objects>
                 <viewController restorationIdentifier="FilterViewController" storyboardIdentifier="FilterViewController" modalPresentationStyle="fullScreen" id="DvH-Ko-YgR" customClass="EditingViewController" customModule="Film" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9p6-K7-q8x">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="9p6-K7-q8x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -156,7 +156,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8P-ZD-ZUE">
                                 <rect key="frame" x="0.0" y="438" width="375" height="229"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-Ij-ayZ">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xtc-Ij-ayZ">
                                         <rect key="frame" x="0.0" y="0.0" width="1125" height="221"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-3M-dJk">
@@ -178,7 +178,7 @@
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="DTt-jW-Yce">
-                                                <rect key="frame" x="32" y="35" width="317" height="30"/>
+                                                <rect key="frame" x="32" y="184" width="317" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="contrast"/>
                                                 <connections>
@@ -186,19 +186,41 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZL9-Ut-Cgp">
-                                                <rect key="frame" x="32" y="95" width="317" height="30"/>
+                                                <rect key="frame" x="32" y="44" width="317" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="brightness"/>
                                                 <connections>
                                                     <action selector="colorSliderValue:" destination="DvH-Ko-YgR" eventType="touchUpInside" id="Sl8-4l-IVv"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jMj-fu-SkS">
-                                                <rect key="frame" x="32" y="148" width="317" height="30"/>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="jMj-fu-SkS">
+                                                <rect key="frame" x="32" y="117" width="317" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="saturation"/>
                                                 <connections>
                                                     <action selector="colorSliderValue:" destination="DvH-Ko-YgR" eventType="touchUpInside" id="ZxP-PP-bWm"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="彩度" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w32-SL-aTl">
+                                                <rect key="frame" x="173" y="92" width="34" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="TsukuARdGothic-Regular" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ブライトネス" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC6-D0-QJT">
+                                                <rect key="frame" x="139" y="16" width="102" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="TsukuARdGothic-Regular" family="Tsukushi A Round Gothic" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-3.1400000000000001" maxValue="3.1400000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="3Mj-5Y-N1h">
+                                                <rect key="frame" x="404" y="44" width="317" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="blue"/>
+                                                <connections>
+                                                    <action selector="colorSliderValue:" destination="DvH-Ko-YgR" eventType="touchUpInside" id="1BH-fZ-rr8"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -254,7 +276,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="C2l-ep-ALL"/>
                     <connections>
+                        <outlet property="blueSlider" destination="3Mj-5Y-N1h" id="kRd-u6-SjX"/>
+                        <outlet property="brightnessSlider" destination="ZL9-Ut-Cgp" id="MdD-Fq-I3i"/>
                         <outlet property="cameraImageView" destination="Mqh-0a-IzZ" id="hsy-vG-1PY"/>
+                        <outlet property="contrastSlider" destination="DTt-jW-Yce" id="1le-Lx-jIc"/>
+                        <outlet property="saturationSlider" destination="jMj-fu-SkS" id="rqR-ec-dKz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptJ-M9-3te" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
